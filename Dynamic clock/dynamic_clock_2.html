@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="stop_time()"> click to stop time</button><br><br>
+    <p id = "showClock"></p>
+    <script>
+
+        var clock = setInterval(clock_timing, 1000);
+
+        function clock_timing() {
+            var d = new Date();
+            var thapa = d.toLocaleTimeString();
+            document.getElementById('showClock').innerHTML = thapa;
+        }
+         
+        function stop_time(){
+            clearInterval(clock);
+        }
+    </script>
+</body>
+
+</html>

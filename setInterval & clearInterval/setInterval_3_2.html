@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+     
+    <button type="button" onclick="start_animation()">click here</button>
+
+    <div id="box1"></div>
+    
+    <script>
+        function start_animation() {
+            var a = 10;
+            var len = 0;
+            var id = setInterval(Anim, 200);
+
+            function Anim() {
+
+                if (a == 50) {
+                    clearInterval(id);
+                }
+                else {
+                    len = len + 10;
+                    a = a + 2;
+                    var target = document.getElementById("box1");
+                    target.style.borderRadius = a + '%';
+                    target.style.marginTop = len + 'px';
+                    target.style.marginLeft = len + 'px';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

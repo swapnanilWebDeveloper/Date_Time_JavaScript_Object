@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            width: 150px;
+            height: 150px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" onclick="anime_start()">start animation</button>
+    <button type="button" onclick="anime_stop()">stop animation</button>
+    <div id="test"></div>
+
+    <script>
+        var id;
+        function anime_start() {
+             id = setTimeout(Anim, 5000);
+
+            function Anim() {
+                var target = document.getElementById("test");
+                target.style.width = "500px";
+            }
+        }
+        function anime_stop(){
+            clearTimeout(id);
+        }
+    </script>
+</body>
+
+</html>

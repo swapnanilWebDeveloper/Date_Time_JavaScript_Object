@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+      *{
+        margin : 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      section{
+          display: flex;
+          justify-content : center;
+          align-items : center;
+          flex-direction: column;
+          min-height: 100vh;
+          background-color: rgb(42, 36, 36);
+      }
+
+      h1{
+         font-size : 90px;
+         color: white;
+      }
+
+      p{
+        font-size: 35px;
+        color: aqua;
+        font-weight: 600;
+
+      }
+
+      section .animate{
+        transition: 1s;
+      }
+
+      .sec-1 .animate{
+        transform: translateX(0);
+      }
+
+      .sec-1.show-animate .animate{
+        transform: translateX(-100%);
+      }
+
+      .sec-2 p{
+         color: green;
+      }
+
+      .sec-3 p{
+        color: violet;
+      }
+
+      .sec-4 p{
+        color: yellow;
+      }
+
+      .sec-5 .images img{
+        max-width: 300px;
+      }
+    </style>
+</head>
+<body>
+       <section class="sec-1 show-animate">
+           <h1 class="animate">Hi, I am codehal</h1>
+           <p class="animate">Animation on scroll using html and css and Javascript</p>
+       </section>
+
+       <section class="sec-2">
+        <h1 class="animate">keep scrolling</h1>
+        <p class="animate">Animation on scroll using html and css and Javascript</p>
+       </section>
+       
+       <section class="sec-3">
+        <h1 class="animate">Nice!</h1>
+        <p class="animate">Animation on scroll using html and css and Javascript</p>
+       </section>
+
+       <section class="sec-4">
+        <h1 class="animate">very good</h1>
+        <p class="animate">Animation on scroll using html and css and Javascript</p>
+       </section>
+
+       <section class="sec-5">
+        <div class="images">
+            <img src="image1.png" alt="">
+            <img src="image2.png" alt="">
+            <img src="image3.png" alt="">
+        </div>
+       </section>
+       
+
+       <script>
+          let sections = document.querySelectorAll('section');
+          
+          window.onscroll = () => {
+            sections.forEach(sec =>{
+                let top = window.scrollY;
+                let offset = sec.offfsetTop - 150;
+                let height = sec.offsetHeight;
+
+                if(top >= offset && top < offset + height){
+                    sec.classList.add('show-animate');
+                }
+                else{
+                    sec.classList.remove('show-animate');
+                }
+            })
+          }
+       </script>
+</body>
+</html>

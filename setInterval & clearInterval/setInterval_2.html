@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 80px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <button type="button" onclick="start_animation()">click here</button>
+    <script>
+        function start_animation() {
+            var a = 10;
+            var id = setInterval(Anim, 500);
+
+            function Anim() {
+
+                if (a == 100) {
+                    clearInterval(id);
+                }
+                else {
+                    a = a + 5;
+                    var target = document.getElementById("box");
+                    target.style.marginLeft = a + 'px';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
